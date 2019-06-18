@@ -1,0 +1,26 @@
+@import '../settings/vars';
+
+html,
+body {
+  background-color: white;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: primary_dark;
+  margin: 0;
+  font-size: 15px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+}
+
+:global .ReactModal__Body--open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}

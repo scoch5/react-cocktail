@@ -11,12 +11,12 @@ function App() {
     <Router>
       <div className={style.wrapper}>
         <nav className={style.menu}>
-          <ul>
-            <li>
-              <NavLink exact activeClassName={style.linkActive} to="/">Home</NavLink>
+          <ul className={style.menulist}>
+            <li className={style.menuitem}>
+              <NavLink exact className={style.link} activeClassName={style.linkActive} to="/">Home</NavLink>
             </li>
-            <li>
-              <NavLink activeClassName={style.linkActive} to="/search">Search</NavLink>
+            <li className={style.menuitem}>
+              <NavLink className={style.link} activeClassName={style.linkActive} to="/search">Search</NavLink>
             </li>
           </ul>
         </nav>

@@ -1,6 +1,7 @@
+@import '../../style/settings/vars';
 
 .wrapper {
-  text-align: center;
+  composes: tc from $_tachyons;
 }
 
 .logo {
@@ -10,7 +11,7 @@
 }
 
 .link {
-  color: #61dafb;
+  color: $red;
 }
 
 @keyframes HomePage-logo-spin {

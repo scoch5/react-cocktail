@@ -1,0 +1,22 @@
+/*
+* --------------------------------------------------------
+* Paths
+*
+*/
+
+/* -- components folder  -- */
+$_components: './../style/components/index';
+$components: './style/components/index';
+
+/* -- utilities folder  -- */
+$tachyons: '../../node_modules/tachyons/css/tachyons.css';
+$_tachyons: '../../../node_modules/tachyons/css/tachyons.css';
+
+/*
+* --------------------------------------------------------
+* Colors
+*
+*/
+$green: #42CE9C;
+$red: #F76158;
+$gray-dark: #474e5c;

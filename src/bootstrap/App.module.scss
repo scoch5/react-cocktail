@@ -1,42 +1,31 @@
-.wrapper {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@import '../style/settings/vars';
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem 2rem;
-  background-color: #474e5c;
-  font-size: 1.5rem;
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    li {
-      display: inline-block;
-      margin: 0 10px;
-      a {
-        color: white;
-        text-decoration: none;
-        &:hover {
-          text-decoration: line-through;
-        }
-      }
-    }
+  composes: fixed top-0 left-0 right-0 pv4 ph4 f3 from $tachyons;
+  background-color: $gray-dark;
+}
+
+.menulist {
+  composes: pa0 ma0 db list from $tachyons;
+  list-style: none;
+}
+
+.menuitem {
+  composes: dib mv0 mr4 from $tachyons;
+}
+
+.link {
+  composes:white no-underline from $tachyons;
+
+  &:hover {
+    text-decoration: line-through;
   }
 }
 
 .linkActive {
-  border-bottom: .15rem solid white;
+  composes: link;
+
+  composes: bb bw-1 from $tachyons;
   &:hover {
     border: none;
   }
