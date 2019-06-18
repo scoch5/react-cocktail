@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import {
   SearchCocktailsForm,
@@ -9,24 +9,32 @@ import {
 } from '../../providers';
 import style from './SearchPage.module.scss';
 
-function SearchPage({ searchCocktails, cocktails }) {
-  return (
-    <div className={style.wrapper}>
-      <SearchCocktailsForm onSearch={searchCocktails} />
+class SearchPage extends Component {
+  componentDidMount() {
+    const { resetSearchCocktails } = this.props
 
-      {
-        cocktails &&
-        <div className={style.list}>
-          {
-            cocktails.map((cocktail) => 
-              <CocktailTeaser key={cocktail.idDrink} cocktail={cocktail} />
-            )
-          }
-        </div>
-      }
-
-    </div>
-  );
+    resetSearchCocktails()
+  }
+  render() {
+    const { searchCocktails, cocktails } = this.props
+    return (
+      <div className={style.wrapper}>
+        <SearchCocktailsForm onSearch={searchCocktails} />
+  
+        {
+          cocktails &&
+          <div className={style.list}>
+            {
+              cocktails.map((cocktail) => 
+                <CocktailTeaser key={cocktail.idDrink} cocktail={cocktail} />
+              )
+            }
+          </div>
+        }
+  
+      </div>
+    );
+  }
 }
 
 SearchPage.propTypes = {

@@ -5,6 +5,7 @@ import ReduxThunk from 'redux-thunk'
 import { apiMiddleware } from 'redux-api-middleware'
 import {
   BrowserRouter as Router,
+  Switch,
   Route,
   NavLink
 } from 'react-router-dom';
@@ -40,8 +41,10 @@ function App() {
               </li>
             </ul>
           </nav>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/search" exact component={SearchPage} />
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/search" exact component={SearchPage} />
+          </Switch>
         </div>
       </Router>
     </Provider>
