@@ -1,11 +1,11 @@
 @import '../../style/settings/vars';
 
 .searchform {
-  composes: ma4 from $_tachyons;
+  composes: w-100 db mv4 ph4 from $_tachyons;
 }
 
 .input {
-  composes: ph3 h3 mr3 bn br3 from $_tachyons;
+  composes: db w-100 ph3 h3 mr3 bn br3 from $_tachyons;
 }
 
 .button {

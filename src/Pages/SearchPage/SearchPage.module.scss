@@ -1,9 +1,9 @@
 @import '../../style/settings/vars';
 
 .wrapper {
-  composes: mv6 center from $_tachyons;
+  composes: pv4 center from $_tachyons;
 }
 
 .list {
-  composes: mw6 center from $_tachyons;
+  composes: ph4 center from $_tachyons;
 }

@@ -38,8 +38,6 @@ export const searchCocktails = (q) => {
 
 export const cocktails = (state = [], action) => {
   switch (action.type) {
-    case SEARCH_COCKTAILS_REQUEST:
-      return []
     case SEARCH_COCKTAILS_SUCCEDED:
       return idx(action, a => a.payload.drinks)
     case SEARCH_COCKTAILS_FAILED:

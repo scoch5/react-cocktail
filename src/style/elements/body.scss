@@ -1,5 +1,9 @@
 @import '../settings/vars';
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: white;
