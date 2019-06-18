@@ -1,15 +1,40 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
+import {
+  SearchCocktailsForm,
+  CocktailTeaser,
+} from '../../components';
+import {
+  withSearchPage,
+} from '../../providers';
 import style from './SearchPage.module.scss';
 
-function SearchPage() {
+function SearchPage({ searchCocktails, cocktails }) {
   return (
-    <div>
-      <form className={style.searchform}>
-        <input type="search" className={style.input} />
-        <button className={style.button}>Search</button>
-      </form>
+    <div className={style.wrapper}>
+      <SearchCocktailsForm onSearch={searchCocktails} />
+
+      {
+        cocktails &&
+        <div className={style.list}>
+          {
+            cocktails.map((cocktail) => 
+              <CocktailTeaser key={cocktail.idDrink} cocktail={cocktail} />
+            )
+          }
+        </div>
+      }
+
     </div>
   );
 }
 
-export default SearchPage;
+SearchPage.propTypes = {
+  searchCocktails: PropTypes.func.isRequired,
+  cocktails: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+}
+
+SearchPage.defaultProps = {
+}
+
+export default withSearchPage(SearchPage);

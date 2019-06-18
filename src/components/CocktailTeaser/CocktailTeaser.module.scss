@@ -1,0 +1,25 @@
+@import '../../style/settings/vars';
+
+.wrapper {
+  composes: dt w-100 bb b--white-05 pb2 mt2 from $_tachyons;
+}
+
+.figure {
+  composes: dtc w2 w3-ns v-mid from $_tachyons;
+}
+
+.image {
+  composes: ba b--white-10 db br2 w2 w3-ns h2 h3-ns from $_tachyons;
+}
+
+.content {
+  composes: dtc v-mid pl3 from $_tachyons;
+}
+
+.title {
+  composes: f6 f5-ns fw6 lh-title white mv0 from $_tachyons;
+}
+
+.subtitle {
+  composes: f6 fw4 mt0 mb0 white-60 from $_tachyons;
+}

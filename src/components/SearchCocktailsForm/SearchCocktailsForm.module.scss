@@ -1,0 +1,14 @@
+@import '../../style/settings/vars';
+
+.searchform {
+  composes: ma4 from $_tachyons;
+}
+
+.input {
+  composes: ph3 h3 mr3 bn br3 from $_tachyons;
+}
+
+.button {
+  composes: white h3 pv1 ph4 ma0 bn br3 from $_tachyons;
+  background-color: $red;
+}
