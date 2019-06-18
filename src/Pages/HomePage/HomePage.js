@@ -4,14 +4,14 @@ import style from './HomePage.module.scss';
 
 function HomePage() {
   return (
-    <div className={style.app}>
-      <header className={style.appHeader}>
-        <img src={logo} className={style.appLogo} alt="logo" />
+    <div className={style.wrapper}>
+      <header className={style.header}>
+        <img src={logo} className={style.logo} alt="logo" />
         <p>
           Edit <code>src/HomePage.js</code> and save to reload.
         </p>
         <a
-          className={style.appLink}
+          className={style.link}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
