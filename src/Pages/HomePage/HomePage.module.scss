@@ -5,8 +5,9 @@
 }
 
 .logo {
-  height: 40vmin;
+  composes: mt5 mb4 from $_tachyons;
   pointer-events: none;
+  height: 40vh;
 }
 
 .link {
