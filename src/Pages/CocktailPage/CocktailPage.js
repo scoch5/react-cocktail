@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router';
+import { FormattedMessage } from 'react-intl';
 import {
 } from '../../components';
 import {
@@ -33,7 +34,9 @@ class CocktailPage extends Component {
 
     return (
       <ul className={style.ingredients}>
-        <h4 className={style.sectionTitle}>Ingredienti</h4>
+        <h4 className={style.sectionTitle}>
+          <FormattedMessage id="ingredients" />
+        </h4>
         { new Array(10).fill().map((e, index) => {
           const ingredient = cocktail[`strIngredient${index + 1}`]
           const measure = cocktail[`strMeasure${index + 1}`]
@@ -59,7 +62,7 @@ class CocktailPage extends Component {
     if (!cocktail) {
       return (
         <div className={style.wrapper}>
-          Loading
+          <FormattedMessage id="loading" />
         </div>
       )
     }
@@ -96,7 +99,9 @@ class CocktailPage extends Component {
         {
           strGlass &&
           <div className={style.glass}>
-            <h4 className={style.sectionTitle}>Tipologia di bicchiere</h4>
+            <h4 className={style.sectionTitle}>
+              <FormattedMessage id="glassType" />
+            </h4>
             {strGlass}
           </div>
         }

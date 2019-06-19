@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
+import { injectIntl } from 'react-intl';
 import debounce from 'lodash.debounce';
 import style from './SearchCocktailsForm.module.scss';
 
@@ -34,10 +35,16 @@ class SearchCocktailsForm extends Component {
   }
 
   render() {
+    const { intl } = this.props
     return (
       <div>
         <form className={style.searchform} onSubmit={() => this.handleSubmitForm}>
-          <input placeholder="Type to search cocktails" type="search" className={style.input} onChange={this.handleInputChange} />
+          <input
+            placeholder={intl.formatMessage({ id: 'searchInputPlaceholder' })}
+            type="search"
+            className={style.input}
+            onChange={this.handleInputChange}
+          />
         </form>
       </div>
     );
@@ -46,9 +53,10 @@ class SearchCocktailsForm extends Component {
 
 SearchCocktailsForm.propTypes = {
   onSearch: PropTypes.func.isRequired,
+  intl: PropTypes.shape({}),
 }
 
 SearchCocktailsForm.defaultProps = {
 }
 
-export default SearchCocktailsForm;
+export default injectIntl(SearchCocktailsForm);
