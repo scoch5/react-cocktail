@@ -12,6 +12,7 @@ import {
 import {
   HomePage,
   SearchPage,
+  CocktailPage,
 } from '../Pages';
 import reducer from '../data'
 import style from './App.module.scss'
@@ -44,6 +45,7 @@ function App() {
           <Switch>
             <Route path="/" exact component={HomePage} />
             <Route path="/search" exact component={SearchPage} />
+            <Route path="/cocktails/:id" exact component={CocktailPage} />
           </Switch>
         </div>
       </Router>

@@ -1,0 +1,13 @@
+@import '../../style/settings/vars';
+
+.wrapper {
+  composes: pa3 pa5-ns from $_tachyons;
+}
+
+.title {
+  composes: f2 from $_tachyons;
+}
+
+.image {
+  composes: w-100 f5 measure from $_tachyons;
+}

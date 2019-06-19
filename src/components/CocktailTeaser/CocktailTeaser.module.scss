@@ -1,5 +1,9 @@
 @import '../../style/settings/vars';
 
+.link {
+  composes: no-underline from $_tachyons;
+}
+
 .wrapper {
   composes: dt w-100 bb b--white-05 pb2 mt2 from $_tachyons;
 }
