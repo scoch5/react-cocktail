@@ -14,6 +14,13 @@ export const resetSearchCocktails = () => ({
 })
 
 export const searchCocktails = (q) => {
+
+  if (q === '') {
+    return {
+      type: RESET_COCKTAILS,
+    }
+  } 
+
   return {
     [RSAA]: {
       endpoint: `${search}?s=${q}`,
@@ -39,7 +46,7 @@ export const searchCocktails = (q) => {
 export const cocktails = (state = [], action) => {
   switch (action.type) {
     case SEARCH_COCKTAILS_SUCCEDED:
-      return idx(action, a => a.payload.drinks)
+      return idx(action, a => a.payload.drinks ? a.payload.drinks : [])
     case SEARCH_COCKTAILS_FAILED:
     case RESET_COCKTAILS:
       return []
