@@ -28,6 +28,31 @@ class CocktailPage extends Component {
     resetCocktail()
   }
   
+  renderIngredients = () => {
+    const { cocktail } = this.props
+
+    return (
+      <ul className={style.ingredients}>
+        <h4 className={style.sectionTitle}>Ingredienti</h4>
+        { new Array(10).fill().map((e, index) => {
+          const ingredient = cocktail[`strIngredient${index + 1}`]
+          const measure = cocktail[`strMeasure${index + 1}`]
+          if (ingredient) {
+            return (
+              <li>
+                <strong className={style.ingredient}>{ ingredient } </strong>
+                <span className={style.measure}>
+                  { measure }
+                </span>
+              </li> 
+            )
+          }
+        }
+        )}
+      </ul>
+    )
+  }
+
   render() {
     const { cocktail } = this.props
 
@@ -43,6 +68,8 @@ class CocktailPage extends Component {
       strDrink,
       strInstructions,
       strDrinkThumb,
+      strCategory,
+      strGlass,
     } = cocktail
 
     return (
@@ -50,16 +77,32 @@ class CocktailPage extends Component {
         <h1 className={style.title}>
           {strDrink}
         </h1>
+        <h3 className={style.subtitle}>
+          {strCategory}
+        </h3>
         <img
           alt={strDrink}
           src={strDrinkThumb}
           className={style.image}
         />
+
         {
           strInstructions &&
           <p className={style.instructions}>
             {strInstructions}
           </p>
+        }
+
+        {
+          strGlass &&
+          <div className={style.glass}>
+            <h4 className={style.sectionTitle}>Tipologia di bicchiere</h4>
+            {strGlass}
+          </div>
+        }
+
+        {
+          this.renderIngredients()
         }
       </div>
     );

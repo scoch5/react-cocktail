@@ -5,9 +5,37 @@
 }
 
 .title {
-  composes: f2 from $_tachyons;
+  composes: f2 mb1 from $_tachyons;
+}
+
+.subtitle {
+  composes: f4 mt1 silver from $_tachyons;
 }
 
 .image {
-  composes: w-100 f5 measure from $_tachyons;
+  composes: w-100 from $_tachyons;
+}
+
+.instructions {
+  composes: w-100 f4 measure from $_tachyons;
+}
+
+.sectionTitle {
+  composes: f3 mb2 silver from $_tachyons;
+}
+
+.ingredients {
+  composes: mv2 pa0 list f4 measure from $_tachyons;
+}
+
+.ingredient {
+  composes: moon-gray from $_tachyons;
+}
+
+.glass {
+  composes: moon-gray f4 fw7 from $_tachyons;
+}
+
+.measure {
+  composes: i silver from $_tachyons;
 }
